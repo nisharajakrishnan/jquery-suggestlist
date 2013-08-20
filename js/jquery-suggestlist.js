@@ -150,12 +150,11 @@
 			if ( val === $selected.text() ) {
 				return;
 			}
-			if(!$( elem ).text().match("^"+val))
-                return;
-            $selected.removeClass( 'suggestlist-selected' );
-            this.picker.find( 'li' ).each( function( i, elem ) {
-                if ( $( elem ).text().match("^"+val)) {
-                    $( elem ).addClass( 'suggestlist-selected' );
+			
+            		this.picker.find( 'li' ).each( function( i, elem ) {
+                		if ( $( elem ).text().match("^"+val)) {
+                		$selected.removeClass( 'suggestlist-selected' );
+                		 $( elem ).addClass( 'suggestlist-selected' );
                 }
             } );
             this.show();
