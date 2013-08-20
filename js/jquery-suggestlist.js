@@ -150,19 +150,16 @@
 			if ( val === $selected.text() ) {
 				return;
 			}
-			if ( $.inArray( val, this.options.list ) === -1 ) {
-				return false;
-			}
-			$selected.removeClass( 'suggestlist-selected' );
-			this.picker.find( 'li' ).each( function( i, elem ) {
-				if ( $( elem ).text() === val ) {
-					$( elem ).addClass( 'suggestlist-selected' );
-				}
-			} );
-			if ( event ) {
-				this.show();
-			}
-		}
+			if(!$( elem ).text().match("^"+val))
+                return;
+            $selected.removeClass( 'suggestlist-selected' );
+            this.picker.find( 'li' ).each( function( i, elem ) {
+                if ( $( elem ).text().match("^"+val)) {
+                    $( elem ).addClass( 'suggestlist-selected' );
+                }
+            } );
+            this.show();
+        }
 
 	};
 
