@@ -147,6 +147,8 @@
 			var val = $.trim( this.element.val() ).replace(/\s+/, ' '),
 				$li = this.picker.find( 'li' ),
 				$selected = $li.filter( '.suggestlist-selected' ).first();
+			if(val=="")
+				return;
 			if ( val === $selected.text() ) {
 				return;
 			}
